@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>LOGIN PAGE</title>
+		 <link rel="stylesheet" href="../css/style.css">
+		</head>
+
+	<body>
+	<header>
+        <div class="header-content">
+            <h1>B.M.Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="../index.html">About Us</a></li>
+                    <li><a href="../html/contact.html">Contact</a></li>
+					<li><a href="html/login.html">login</a></li>
+					<li><a href="../html/feedback.html">feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	<div>
+		<a href="../index.html" />home</a>
+	</div>
+<script >
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "Formget" && password == "formget#123"){
+alert ("Login successfully");
+window.location = "../index.html"; // Redirecting to other page.
+return false;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
+</head>
+<body>
+<div class="container">
+<div class="main">
+<h2>Login Form Validation</h2>
+<form id="form_id" method="post" name="myform">
+<label>User Name :</label>
+<input type="text" name="username" id="username"/>
+<br>
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+<br>
+</form>
+<span><b class="note">Note : </b>Please enter valid username and password. <br/><b class="valid">User Name : Formget<br/>Password : formget#123</b></span>
+</div>
+</div>
+  </body>
+</html>
